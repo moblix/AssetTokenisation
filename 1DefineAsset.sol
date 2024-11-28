@@ -1,0 +1,1 @@
+// Allows the user to define an Asset.
