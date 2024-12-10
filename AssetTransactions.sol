@@ -5,14 +5,14 @@ pragma solidity ^0.8.26;
 import "./TokeniseAsset.sol";
 
 contract AssetTransactions is TokeniseAsset {
+
     uint256 public assetPrice;
     mapping(address => uint256) public purchaseHistory;
 
     event AssetPurchased(address indexed buyer, uint256 amount);
     event AssetSold(address indexed seller, uint256 amount);
 
-    constructor(string memory _title, int _releaseYear, string memory _system, uint256 _initialPrice)
-        TokeniseAsset(_title, _releaseYear, _system) {
+    constructor(string memory _title, int _releaseYear, string memory _system, uint256 _initialPrice) TokeniseAsset(_title, _releaseYear, _system) {
         assetPrice = _initialPrice;
     }
 

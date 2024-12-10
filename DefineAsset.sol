@@ -7,7 +7,7 @@ contract DefineAsset {
     int public gameReleaseYear;
     string public gameSystem;
     address public creator;
-        
+
     event AssetCreated(string title, int releaseYear, string system, address creator);
 
     constructor(string memory _title, int _releaseYear, string memory _system) {
