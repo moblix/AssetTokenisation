@@ -3,10 +3,9 @@
 pragma solidity ^0.8.26;
 import "./DefineAsset.sol";
 
-
 contract TokeniseAsset is DefineAsset {
-    string public name = "FractionalAssetToken";
-    string public symbol = "FAT";
+    string public name = "Smashbros";
+    string public symbol = "SMB";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 
