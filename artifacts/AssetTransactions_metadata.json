@@ -21,6 +21,11 @@
 						"internalType": "string",
 						"name": "_system",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_initialPrice",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -88,6 +93,44 @@
 					{
 						"indexed": true,
 						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "AssetPurchased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "AssetSold",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
 						"name": "from",
 						"type": "address"
 					},
@@ -121,6 +164,19 @@
 					}
 				],
 				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "assetPrice",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -219,43 +275,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					}
-				],
-				"name": "getOwnerOfAsset",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getTopOwners",
-				"outputs": [
-					{
-						"internalType": "address[]",
-						"name": "",
-						"type": "address[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "to",
 						"type": "address"
 					},
@@ -281,6 +300,64 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "purchaseAsset",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "purchaseHistory",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "sellAsset",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "setAssetPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -347,7 +424,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"CalculateTop10.sol": "CalculateTop10"
+			"AssetTransactions.sol": "AssetTransactions"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -361,12 +438,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"CalculateTop10.sol": {
-			"keccak256": "0xec4b47c0244be49084a502acef9d6c632a90fd0387576d3fd78b8694b98ea959",
+		"AssetTransactions.sol": {
+			"keccak256": "0x7ef335ce136f2ffd1bd5680a3f66f848947f281c2f786f9c2e696e0c33ef458c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3c0e31b3c84cd517d58d0fa81389fad4425a9357ae7a523000de2ff893f421a9",
-				"dweb:/ipfs/QmdivQXzM3snJKVFxh37d2iiYFuJwUwgydezRmwfQKrfyF"
+				"bzz-raw://cd3829c8a42fd6cc22ab7e5f119a21412951a5aa434455f5881e56f1cec55618",
+				"dweb:/ipfs/QmTU3n3YQGEvoc3RJQp2o29uoU72oMjtHhw1uymG6hdLTF"
 			]
 		},
 		"DefineAsset.sol": {
