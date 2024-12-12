@@ -1,1 +1,0 @@
-// Tokenise the asset by creation of the native tokens representing a fractional share of the asset.

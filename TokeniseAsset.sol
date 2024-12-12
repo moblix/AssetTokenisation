@@ -5,13 +5,15 @@ import "./DefineAsset.sol";//imports so this contract inherits properties and fu
 
 
 contract TokeniseAsset is DefineAsset { 
-    string public name = "FractionalAssetToken";
-    string public symbol = "FAT";
-    uint8 public decimals = 18;
+    string public name = "smashbros";
+    string public symbol = "SMB";
+    uint8 public decimals = 1;
     uint256 public totalSupply; //metadata to apply to the token itself
 
     mapping(address => uint256) public balanceOf; //maps the address to token balances
     mapping(address => mapping(address => uint256)) public allowance;
+    address[] public AddressList;
+
 
     event Transfer(address indexed from, address indexed to, uint256 value); //event wehn token is transfered
     event Approval(address indexed owner, address indexed spender, uint256 value); //event when token allowance approved
@@ -22,6 +24,7 @@ contract TokeniseAsset is DefineAsset {
         require(to != address(0), "Cannot mint to the zero address");
         totalSupply += amount; //increases overall supply of the tokens
         balanceOf[to] += amount; //increments the recievers balance
+        AddressList.push(to);
         emit Transfer(address(0), to, amount);
     }
 
@@ -29,7 +32,12 @@ contract TokeniseAsset is DefineAsset {
         require(balanceOf[msg.sender] >= amount, "Insufficient balance"); //cancels if the sender doesnt have enough tokens
         balanceOf[msg.sender] -= amount; 
         balanceOf[recipient] += amount; //deducts from sender and then adds to recievers balance
+        AddressList.push(recipient);
         emit Transfer(msg.sender, recipient, amount);
         return true;
     }
+    
+
+
 }
+ 

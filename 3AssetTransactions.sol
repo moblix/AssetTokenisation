@@ -1,1 +1,0 @@
-// Purchase, transfer and sell the asset.

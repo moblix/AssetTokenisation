@@ -1,1 +1,0 @@
-//Allows to calculate how many assets have been created.

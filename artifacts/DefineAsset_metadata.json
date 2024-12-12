@@ -138,11 +138,11 @@
 	},
 	"sources": {
 		"DefineAsset.sol": {
-			"keccak256": "0xab8d5702f4bc5c2959a2ef568444489f1b05123ca4a5700fe1486b64f88ed2b7",
+			"keccak256": "0xd242345b13c8900adf6392b3573273de298d6052b7ff056b546ecd09e486532e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d6237cc39a4ecf956005e5bf4aa770737431d4f8f9002bb773fd4ad5d52386e6",
-				"dweb:/ipfs/QmNghsbUA5mYju1f94eWrxb3hrs3nByJe1USr4hZDaQXJ1"
+				"bzz-raw://983ceb7274291d7f6e26fb66e6ee75b5cae76e7c02b538610b34d6fb0ca2cc1e",
+				"dweb:/ipfs/QmbBJmdxQ3MR3CWgCVSxJF1RrkMaiegRBsEB9aXkVqmNbo"
 			]
 		}
 	},
